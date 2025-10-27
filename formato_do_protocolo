@@ -1,5 +1,5 @@
 <Remetente>|<Sala>|<Tipo de mensagem>|<Conteúdo>
---se conteudo precisar de mais de um campo separe por ":" (dois(2) pontos(.))
+--se Conteúdo precisar de mais de um campo separe por ":" (dois(2) pontos(.))
 Implementações:
 
 <Remetente>
@@ -9,7 +9,7 @@ Implementações:
     -Pode ser SERVER quando o cliente quer realizar uma operação no servidor
 <Tipo de mensagem>
     L = lista de salas
-        ->player deve enviar uma mensagem solicitanto a listagem de salas
+        ->player deve enviar uma mensagem solicitando a listagem de salas
             <Socket>|SERVER|L|null
         ->Servidor deve responder com a lista
             <Socket>|SERVER|L|<lista de salas>
@@ -19,13 +19,13 @@ Implementações:
             <Socket>/SERVER/S/<nome da sala>
         ->Servidor pode responde com dois tipos de mensagem:
             -Erro:
-                ->player não conceta em nenhuma sala
+                ->player não conecta em nenhuma sala
                     <Socket>/SERVER/E/<Mensagem de erro>
-            -Confrimação:
+            -Confirmação:
                 ->player conectou na sala
                     <Socket>|SERVER|S|<Mensagem de confirmação>:<Nome da sala>
     M = Mandar uma mensagem em uma sala
     J = fazer uma ação no jogo
     E = mensagem de erro
 <Conteúdo>
-    indica o que sera realizado
+    indica o que será realizado
