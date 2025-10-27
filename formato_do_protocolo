@@ -1,0 +1,31 @@
+<Remetente>|<Sala>|<Tipo de mensagem>|<conteudo>
+--se conteudo precisar de mais de um campo separe por ":" (dois(2) pontos(.))
+implementações:
+
+<remetente>
+    -Sempre sera o buffer do remetente
+<Sala>
+    -Pode ser o nome da sala em que o cliente está logado
+    -Pode ser SERVER quando o cliente quer realizar uma operação no servidor
+<tipo de mensagem>
+    L = lista de salas
+        ->player deve enviar uma mensagem solicitanto a listagem de salas
+            <Socket>|SERVER|L|null
+        ->Servidor deve responder com a lista
+            <Socket>|SERVER|L|<lista de salas>
+        ->player imprime a lista
+    S = conexão com uma sala
+        ->player deve informar a sala que deseja entrar
+            <Socket>/SERVER/S/<nome da sala>
+        ->Servidor pode responde com dois tipos de mensagem:
+            -Erro:
+                ->player não conceta em nenhuma sala
+                    <Socket>/SERVER/E/<Mensagem de erro>
+            -Confrimação:
+                ->player conectou na sala
+                    <Socket>|SERVER|S|<Mensagem de confirmação>:<Nome da sala>
+    M = Mandar uma mensagem em uma sala
+    J = fazer uma ação no jogo
+    E = mensagem de erro
+<conteudo>
+    indica o que sera realizado
